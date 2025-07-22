@@ -1,0 +1,14 @@
+import s from "./{{ dashCase name }}.module.css";
+
+type {{ pascalCase name }}Props = {
+  // Define your component props here
+};
+
+export const {{ pascalCase name }} = ({}: {{ pascalCase name }}Props) => {
+  return (
+    <div className={s["{{ dashCase name }}"]}>
+      {/* Add your component content here */}
+      <h1>{{ pascalCase name }} Component</h1>
+    </div>
+  );
+};
