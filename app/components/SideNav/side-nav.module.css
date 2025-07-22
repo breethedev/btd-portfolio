@@ -13,6 +13,7 @@
   justify-content: start;
   padding: var(--btd-space-5);
   gap: var(--btd-space-3);
+  border-right: 1px solid var(--btd-color-border);
 }
 
 .side-nav-item {

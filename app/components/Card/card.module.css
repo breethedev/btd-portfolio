@@ -1,9 +1,20 @@
 .card {
   /* Add your component styles here */
+  padding: 20px;
+  max-width: 202px;
+}
+
+.card-image-container,
+.placeholder-image {
+  width: 200px;
+  height: 200px;
   display: flex;
-  flex-direction: column;
   align-items: center;
   justify-content: center;
-  padding: 20px;
+  border: 1px solid var(--btd-color-border);
+  border-radius: var(--btd-radius-sm);
+}
 
+.card-title {
+  margin: var(--btd-space-2) 0;
 }
