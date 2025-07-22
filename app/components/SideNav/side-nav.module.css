@@ -4,12 +4,50 @@
   position: fixed;
   top: 0;
   left: 0;
-  width: 250px;
+  width: 200px;
   background-color: var(--btd-color-bg);
   color: var(--btd-color-secondary);
   height: 100%;
   flex-direction: column;
+  align-items: start;
+  justify-content: start;
+  padding: var(--btd-space-5);
+  gap: var(--btd-space-3);
+}
+
+.side-nav-item {
+  display: flex;
+  text-transform: uppercase;
+  width: calc(100% - var(--btd-space-10));
+  max-width: 100%;
+  padding: var(--btd-space-2) var(--btd-space-2);
+  color: var(--btd-color-text-primary);
+  text-decoration: none;
+  border: 1px solid var(--btd-color-border);
+  border-radius: 4px;
+  transition: background-color 0.2s ease;
+}
+
+.side-nav-item:hover {
+  opacity: 0.8;
+  cursor: pointer;
+}
+
+.side-nav-link {
+  display: flex;
+  color: var(--btd-color-text-primary);
+  text-decoration: none;
+  font-weight: 500;
+  width: 100%;
+}
+
+.side-nav-header {
+  display: flex;
   align-items: center;
-  justify-content: center;
-  padding: 20px;
+  gap: var(--btd-space-2);
+  margin-bottom: var(--btd-space-10);
+}
+
+.side-nav-title {
+  font-size: var(--btd-space-4);
 }

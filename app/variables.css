@@ -1,4 +1,3 @@
-@import url("https://fonts.googleapis.com/css2?family=Oswald:wght@200..700&family=Urbanist:ital,wght@0,100..900;1,100..900&display=swap");
 :root {
   /* Colors */
   --btd-color-primary: #0c0c0c;
@@ -59,7 +58,7 @@
   --btd-space-2xl: 4rem;
 
   /* Fonts */
-  --btd-font-main: "Oswald", sans-serif;
+  --btd-font-main: "Cascadia Code", sans-serif;
   --btd-font-mono: "Work Sans", "Menlo", "Monaco", monospace;
 
   /* Font sizes */
