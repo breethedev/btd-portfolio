@@ -24,7 +24,7 @@ export default function (plop) {
       },
       {
         type: "add",
-        path: "app/components/{{pascalCase name}}/{{dashCase name}}.css",
+        path: "app/components/{{pascalCase name}}/{{dashCase name}}.module.css",
         templateFile: "plop-templates/component.css.hbs",
       },
       {

@@ -12,7 +12,6 @@ export const Sections = {};
 export const SectionNames = {
   ABOUT: "About",
   EXPERIENCE: "Experience",
-  EDUCATION: "Education",
   SKILLS: "Skills",
   PROJECTS: "Projects",
   INTERESTS: "Interests",
