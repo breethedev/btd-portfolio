@@ -14,7 +14,7 @@ type SideNavItemProps = {
 
 export const SideNav = ({ items }: SideNavProps) => {
   return (
-    <div className={s["side-nav"]}>
+    <div className={`side-nav ${s["side-nav"]}`}>
       <div className={s["side-nav-header"]}>
         <div>
           <Link href="/" className={s["side-nav-link"]}>

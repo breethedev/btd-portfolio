@@ -1,0 +1,23 @@
+.banner {
+  /* Add your component styles here */
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 20px;
+  background-color: var(--btd-color-primary);
+  border-bottom: 1px solid var(--btd-color-border);
+}
+
+.banner-title {
+  font-size: 6.5rem;
+  text-transform: uppercase;
+  font-family: var(--btd-font-mono);
+  font-weight: bold;
+  color: var(--btd-color-secondary);
+  margin-bottom: 10px;
+  /* background: -webkit-linear-gradient(#eee, #333);
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent; */
+}

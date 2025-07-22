@@ -1,7 +1,7 @@
 export const SUMMARY = {
   first_name: "Breeana",
   last_name: "Payton",
-  title: "Senior Software Engineer",
+  title: "Senior Frontend Engineer",
   interest: ["Software Engineering", "Photograhy", "Web Design"],
   location: "Richmond, VA, USA",
   email: "bree@breethedev.com",
