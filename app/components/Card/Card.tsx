@@ -4,22 +4,28 @@ import s from "./card.module.css";
 import Image from "next/image";
 import Link from "next/link";
 
-type CardProps = {
+export type CardProps = {
   image?: string;
   title?: string;
   description?: string;
   link?: string;
   onClick?: () => void;
   className?: string;
-  size?: string;
+  size?: string[];
 };
 
 export const Card = ({ image, title, description, link, onClick, className, size }: CardProps) => {
   // const cardSizeClass = size ? s[`card-${size}`] : s["card-medium"];
   const cardClasses = `${s["card"]}  ${className || ""}`;
 
+  const width = (size && size[0]) || "200px";
+  const height = (size && size[1]) || "200px";
+
   const PlaceholderImage = () => (
-    <div className={s["placeholder-image"]} style={{ width: size, height: size }}>
+    <div
+      className={s["placeholder-image"]}
+      style={{ width: width, height: size && size.length > 1 ? height : width }}
+    >
       <span>No Image</span>
     </div>
   );
@@ -30,11 +36,11 @@ export const Card = ({ image, title, description, link, onClick, className, size
     }
   };
   return (
-    <div className={cardClasses} onClick={handleClick}>
+    <div className={cardClasses} onClick={handleClick} style={{ width: width }}>
       {image ? (
         <div
           className={s["card-image-container"]}
-          style={{ width: `calc(${size} + 2px)`, height: size }}
+          style={{ width: `calc(${size} + 2px)`, height: size && size.length > 1 ? height : width }}
         >
           <Image src={image} alt={title || "Card Image"} className={s["card-image"]} />
         </div>
