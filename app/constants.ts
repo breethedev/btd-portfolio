@@ -2,7 +2,7 @@ import { TableItemProps, CardProps } from "./components";
 import { Ellipsis, Heart } from "lucide-react";
 
 export const SUMMARY = {
-  first_name: "Breeana",
+  first_name: "Bree",
   last_name: "Payton",
   title: "Senior Frontend Engineer",
   interest: ["Software Engineering", "Photograhy", "Web Design"],
@@ -16,21 +16,26 @@ export const SECTIONS = {
     description: "A passionate software engineer with a love for creating innovative solutions.",
     path: "/about",
   },
+  PROJECTS: {
+    title: "Projects",
+    description: "A portfolio of projects showcasing my skills and creativity.",
+    path: "/projects",
+  },
   EXPERIENCE: {
     title: "Experience",
     description:
       "Over 5 years of experience in full-stack development, specializing in React and Node.js.",
     path: "/experience",
   },
-  SKILLS: {
-    title: "Skills",
-    description: "Proficient in JavaScript, TypeScript, React, Node.js, and more.",
-    path: "/skills",
+  MERCH: {
+    title: "Merch",
+    description: "Check out my merchandise and support my work.",
+    path: "/merch",
   },
-  PROJECTS: {
-    title: "Projects",
-    description: "A portfolio of projects showcasing my skills and creativity.",
-    path: "/projects",
+  BLOG: {
+    title: "Blog",
+    description: "Read my latest articles on software development and technology.",
+    path: "/blog",
   },
   CONTACT: {
     title: "Contact",
@@ -50,36 +55,36 @@ export const SectionNames = {
 export const TOP_FIVE_MEMOS: TableItemProps[] = [
   {
     id: "1",
-    name: "Memo 1",
-    description: "This is the first memo.",
+    name: "Who Am I?",
+    description: "This is a brief introduction about myself.",
     // image: "/images/memo1.jpg",
     icons: [Ellipsis, Heart],
   },
   {
     id: "2",
-    name: "Memo 2",
-    description: "This is the second memo.",
+    name: "What I Do",
+    description: "A summary of my work and interests.",
     // image: "/images/memo2.jpg",
     icons: [Ellipsis, Heart],
   },
   {
     id: "3",
-    name: "Memo 3",
-    description: "This is the third memo.",
+    name: "About this site",
+    description: "A brief overview of this website and its purpose.",
     // image: "/images/memo3.jpg",
     icons: [Ellipsis, Heart],
   },
   {
     id: "4",
-    name: "Memo 4",
-    description: "This is the fourth memo.",
+    name: "About My Experience",
+    description: "A summary of my professional experience and skills.",
     // image: "/images/memo4.jpg",
     icons: [Ellipsis, Heart],
   },
   {
     id: "5",
-    name: "Memo 5",
-    description: "This is the fifth memo.",
+    name: "Why no music?",
+    description: "The reason there is no music on this site.",
     // image: "/images/memo5.jpg",
     icons: [Ellipsis, Heart],
   },

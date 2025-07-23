@@ -42,6 +42,11 @@
   gap: var(--btd-space-2);
 }
 
+.item-description {
+  opacity: 0.8;
+  font-size: 12px;
+}
+
 .placeholder {
   /* Style for placeholder text */
   height: var(--btd-space-10);
