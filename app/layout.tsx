@@ -15,7 +15,11 @@ const antonSC = Anton_SC({
   weight: "400",
 });
 
-const sectionNames = Object.values(SECTIONS).map((section) => section.title);
+// eslint-disable-next-line @typescript-eslint/no-unused-vars
+const sectionLinks = Object.entries(SECTIONS).map(([_, section]) => ({
+  title: section.title,
+  path: section.path,
+}));
 
 export default function RootLayout({
   children,
@@ -26,9 +30,9 @@ export default function RootLayout({
     <html lang="en">
       <body className={`${cascadiaCode.variable} ${antonSC.variable}`}>
         <div className="layout">
-          <SideNav items={sectionNames} />
+          <SideNav items={sectionLinks} />
           <Banner />
-          {children}
+          <div className="main">{children}</div>
         </div>
       </body>
     </html>

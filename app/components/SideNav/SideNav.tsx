@@ -3,8 +3,7 @@ import Link from "next/link";
 import { UserCircle } from "lucide-react";
 
 type SideNavProps = {
-  title?: string;
-  items?: string[];
+  items?: SideNavItemProps[];
 };
 
 type SideNavItemProps = {
@@ -24,7 +23,7 @@ export const SideNav = ({ items }: SideNavProps) => {
         <h2 className={s["side-nav-title"]}>BreeTheDev</h2>
       </div>
       {items?.map((item, index) => (
-        <SideNavItem key={index} title={item} />
+        <SideNavItem key={index} title={item.title} path={item.path} />
       ))}
     </div>
   );
