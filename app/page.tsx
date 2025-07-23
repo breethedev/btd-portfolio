@@ -1,6 +1,8 @@
+"use client";
+
 import s from "./page.module.css";
-import { Card, Table } from "./components";
-import { SUMMARY, TOP_FIVE_MEMOS } from "./constants";
+import { Card, Table, Carousel } from "./components";
+import { SUMMARY, TOP_FIVE_MEMOS, PROJECTS, EXPERIENCE } from "./constants";
 
 export default function Home() {
   return (
@@ -11,11 +13,23 @@ export default function Home() {
             <Card
               title={SUMMARY.first_name}
               description={"Click Play for a message"}
-              size="300px"
+              size={["300px"]}
             />
           </div>
           <Table items={TOP_FIVE_MEMOS} />
         </div>
+        <Carousel
+          header="Projects"
+          action="View All"
+          cards={PROJECTS}
+          onActionClick={() => console.log("View All Projects clicked")}
+        />
+        <Carousel
+          header="Experience"
+          action="Get Resume"
+          cards={EXPERIENCE}
+          onActionClick={() => console.log("Get Resume clicked")}
+        />
       </main>
     </div>
   );

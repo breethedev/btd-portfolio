@@ -1,4 +1,4 @@
-import { TableItemProps } from "./components";
+import { TableItemProps, CardProps } from "./components";
 import { Ellipsis, Heart } from "lucide-react";
 
 export const SUMMARY = {
@@ -82,5 +82,49 @@ export const TOP_FIVE_MEMOS: TableItemProps[] = [
     description: "This is the fifth memo.",
     // image: "/images/memo5.jpg",
     icons: [Ellipsis, Heart],
+  },
+];
+
+export const PROJECTS: CardProps[] = [
+  {
+    // image: "/images/project1.jpg",
+    title: "The Melodi Project",
+    description: "See here",
+    // link: "/projects/melodi",
+  },
+  {
+    // image: "/images/project2.jpg",
+    title: "Dev Blocks",
+    description: "See here",
+    // link: "/projects/melodi",
+  },
+  {
+    // image: "/images/project3.jpg",
+    title: "The Ave",
+    description: "See here",
+    // link: "/projects/melodi",
+  },
+  {
+    // image: "/images/project4.jpg",
+    title: "Le Cache Dulcet",
+    description: "See here",
+    // link: "/projects/melodi",
+  },
+];
+
+export const EXPERIENCE: CardProps[] = [
+  {
+    // image: "/images/experience1.jpg",
+    title: "AutoZone",
+    description: "Developed and maintained web applications using React and TypeScript.",
+    size: ["400px", "200px"],
+    // link: "/experience/xyz-corp",
+  },
+  {
+    // image: "/images/experience2.jpg",
+    title: "AT&T",
+    description: "Worked on both frontend and backend development using Node.js and React.",
+    size: ["400px", "200px"],
+    // link: "/experience/abc-inc",
   },
 ];

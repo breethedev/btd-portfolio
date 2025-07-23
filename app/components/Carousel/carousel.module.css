@@ -1,0 +1,33 @@
+.carousel {
+  /* Add your component styles here */
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: 20px;
+}
+
+.carousel-header-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 10px;
+  text-transform: uppercase;
+  padding: 0 var(--btd-space-5);
+}
+
+.carousel-action {
+  font: var(--btd-font-main);
+  background: transparent;
+  color: var(--btd-color-secondary);
+  border: 1px solid var(--btd-color-secondary);
+  padding: 5px 10px;
+  border-radius: var(--btd-radius-sm);
+  font-size: var(--btd-space-3);
+  text-transform: uppercase;
+}
+
+.carousel-items {
+  display: flex;
+  overflow-x: auto;
+  scroll-snap-type: x mandatory;
+}
