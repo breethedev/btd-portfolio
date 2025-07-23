@@ -4,6 +4,7 @@
   flex-direction: column;
   justify-content: center;
   padding: 20px;
+  max-height: 400px;
 }
 
 .carousel-header-container {
@@ -24,6 +25,11 @@
   border-radius: var(--btd-radius-sm);
   font-size: var(--btd-space-3);
   text-transform: uppercase;
+  cursor: pointer;
+}
+
+.carousel-action:hover {
+  opacity: 0.8;
 }
 
 .carousel-items {

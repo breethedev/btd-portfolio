@@ -37,7 +37,7 @@ const Item = ({ name, description, image, icons }: TableItemProps) => {
         </div>
         <div className={s["item-details"]}>
           <p>{name}</p>
-          <p>{description}</p>
+          <p className={s["item-description"]}>{description}</p>
         </div>
       </div>
       <div className={s["item-icons"]}>

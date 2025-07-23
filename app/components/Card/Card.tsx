@@ -47,13 +47,19 @@ export const Card = ({ image, title, description, link, onClick, className, size
       ) : (
         <PlaceholderImage />
       )}
-      {title && <h2 className={s["card-title"]}>{title}</h2>}
-      {description && <p className={s["card-description"]}>{description}</p>}
-      {link && (
-        <Link href={link} className={s["card-link"]}>
-          Learn More
-        </Link>
-      )}
+      <div className={s["card-body"]}>
+        {title && <h2 className={s["card-title"]}>{title}</h2>}
+        {description || link ? (
+          <div className={s["card-content"]}>
+            {description && <p className={s["card-description"]}>{description}</p>}
+            {link && (
+              <Link href={link} className={s["card-link"]}>
+                Learn More
+              </Link>
+            )}
+          </div>
+        ) : null}
+      </div>
     </div>
   );
 };

@@ -11,8 +11,8 @@ export default function Home() {
         <div className={s["featured-row"]}>
           <div>
             <Card
-              title={SUMMARY.first_name}
-              description={"Click Play for a message"}
+              title={`${SUMMARY.first_name} ${SUMMARY.last_name}`}
+              description="Click play for a quick intro"
               size={["300px"]}
             />
           </div>

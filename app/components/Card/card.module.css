@@ -18,3 +18,15 @@
 .card-title {
   margin: var(--btd-space-2) 0;
 }
+
+.card-body {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  height: calc(100% - 200px);
+}
+
+.card-description {
+  opacity: 0.8;
+  font-size: 14px;
+}
