@@ -1,9 +1,10 @@
 "use client";
 
 import s from "./banner.module.css";
+
 import Image from "next/image";
 import { SUMMARY } from "@/app/constants";
-import { usePathname } from "next/navigation";
+import { usePathname, useParams } from "next/navigation";
 
 type BannerProps = {
   image?: string;
@@ -11,8 +12,17 @@ type BannerProps = {
 
 export const Banner = ({ image }: BannerProps) => {
   const route = usePathname();
+  const params = useParams();
+  const slug = params.slug;
+
+  console.log("Current params:", params);
+
+  console.log("Current route:", route);
 
   const getBannerMessage = (route: string) => {
+    if (!route) return SUMMARY.title;
+    if (slug) return slug.toString().replace(/-/g, " ");
+
     switch (route) {
       case "/":
         return SUMMARY.title;
