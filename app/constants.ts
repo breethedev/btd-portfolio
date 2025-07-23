@@ -1,3 +1,6 @@
+import { TableItemProps } from "./components";
+import { Ellipsis, Heart } from "lucide-react";
+
 export const SUMMARY = {
   first_name: "Breeana",
   last_name: "Payton",
@@ -43,3 +46,41 @@ export const SectionNames = {
   PROJECTS: "Projects",
   INTERESTS: "Interests",
 };
+
+export const TOP_FIVE_MEMOS: TableItemProps[] = [
+  {
+    id: "1",
+    name: "Memo 1",
+    description: "This is the first memo.",
+    // image: "/images/memo1.jpg",
+    icons: [Ellipsis, Heart],
+  },
+  {
+    id: "2",
+    name: "Memo 2",
+    description: "This is the second memo.",
+    // image: "/images/memo2.jpg",
+    icons: [Ellipsis, Heart],
+  },
+  {
+    id: "3",
+    name: "Memo 3",
+    description: "This is the third memo.",
+    // image: "/images/memo3.jpg",
+    icons: [Ellipsis, Heart],
+  },
+  {
+    id: "4",
+    name: "Memo 4",
+    description: "This is the fourth memo.",
+    // image: "/images/memo4.jpg",
+    icons: [Ellipsis, Heart],
+  },
+  {
+    id: "5",
+    name: "Memo 5",
+    description: "This is the fifth memo.",
+    // image: "/images/memo5.jpg",
+    icons: [Ellipsis, Heart],
+  },
+];
