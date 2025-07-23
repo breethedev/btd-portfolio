@@ -27,7 +27,7 @@ export default function RootLayout({
       <body className={`${cascadiaCode.variable} ${antonSC.variable}`}>
         <div className="layout">
           <SideNav items={sectionNames} />
-          <Banner title="Senior Frontend Engineer" />
+          <Banner />
           {children}
         </div>
       </body>

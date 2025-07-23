@@ -1,13 +1,13 @@
 .card {
   /* Add your component styles here */
   padding: 20px;
-  max-width: 202px;
+  max-width: 302px;
 }
 
 .card-image-container,
 .placeholder-image {
-  width: 200px;
-  height: 200px;
+  width: 300px;
+  height: 300px;
   display: flex;
   align-items: center;
   justify-content: center;

@@ -1,0 +1,60 @@
+.table {
+  /* Add your component styles here */
+  padding: var(--btd-space-5);
+  font-size: 14px;
+  min-width: 500px;
+  width: 100%;
+}
+
+.table-body {
+  /* Style for the table body */
+  display: flex;
+  flex-direction: column;
+  gap: var(--btd-space-2);
+  width: 100%;
+}
+
+.table-item {
+  /* Style for each item in the table */
+  width: 100%;
+}
+
+.item {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--btd-space-2);
+  padding: var(--btd-space-2);
+  border-bottom: 1px solid #ccc;
+}
+
+.item:last-of-type {
+  /* Remove border for the last item */
+  border-bottom: none;
+}
+
+.item-content {
+  /* Style for the content of each item */
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: var(--btd-space-2);
+}
+
+.placeholder {
+  /* Style for placeholder text */
+  height: var(--btd-space-10);
+  width: var(--btd-space-10);
+  border: 1px solid var(--btd-color-border);
+  border-radius: var(--btd-radius-sm);
+}
+
+.item-icons {
+  /* Style for the icon in each item */
+  display: flex;
+  flex-direction: row-reverse;
+  align-items: center;
+  gap: var(--btd-space-2);
+  color: var(--btd-color-secondary);
+}

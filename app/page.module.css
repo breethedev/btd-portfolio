@@ -2,3 +2,10 @@
   background-color: var(--btd-color-bg);
   color: var(--btd-color-secondary);
 }
+
+.featured-row {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  padding: var(--btd-space-2);
+}

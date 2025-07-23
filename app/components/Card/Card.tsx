@@ -11,15 +11,15 @@ type CardProps = {
   link?: string;
   onClick?: () => void;
   className?: string;
-  size?: "small" | "medium" | "large";
+  size?: string;
 };
 
 export const Card = ({ image, title, description, link, onClick, className, size }: CardProps) => {
-  const cardSizeClass = size ? s[`card-${size}`] : s["card-medium"];
-  const cardClasses = `${s["card"]} ${cardSizeClass} ${className || ""}`;
+  // const cardSizeClass = size ? s[`card-${size}`] : s["card-medium"];
+  const cardClasses = `${s["card"]}  ${className || ""}`;
 
   const PlaceholderImage = () => (
-    <div className={s["placeholder-image"]}>
+    <div className={s["placeholder-image"]} style={{ width: size, height: size }}>
       <span>No Image</span>
     </div>
   );
@@ -32,7 +32,10 @@ export const Card = ({ image, title, description, link, onClick, className, size
   return (
     <div className={cardClasses} onClick={handleClick}>
       {image ? (
-        <div className={s["card-image-container"]}>
+        <div
+          className={s["card-image-container"]}
+          style={{ width: `calc(${size} + 2px)`, height: size }}
+        >
           <Image src={image} alt={title || "Card Image"} className={s["card-image"]} />
         </div>
       ) : (
