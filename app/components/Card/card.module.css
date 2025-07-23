@@ -30,3 +30,8 @@
   opacity: 0.8;
   font-size: 14px;
 }
+
+.card-meta {
+  opacity: 0.5;
+  font-size: var(--btd-space-3);
+}

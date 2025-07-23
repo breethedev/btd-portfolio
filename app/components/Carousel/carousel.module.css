@@ -5,6 +5,8 @@
   justify-content: center;
   padding: 20px;
   max-height: 400px;
+  width: 100%;
+  max-width: calc(100% - 80px);
 }
 
 .carousel-header-container {
@@ -34,6 +36,34 @@
 
 .carousel-items {
   display: flex;
+  flex-direction: row;
+
+  flex-wrap: nowrap;
+  gap: var(--btd-space-3);
+
   overflow-x: auto;
   scroll-snap-type: x mandatory;
+  -ms-overflow-style: none; /* Internet Explorer 10+ */
+  scrollbar-width: none;
+}
+
+.carousel-items::-webkit-scrollbar {
+  display: none; /* Hide scrollbar for WebKit browsers */
+}
+.carousel-items::-moz-scrollbar {
+  display: none; /* Hide scrollbar for Firefox */
+}
+
+.carousel-arrows {
+  display: flex;
+  gap: var(--btd-space-1);
+}
+
+.carousel-arrow {
+  background: transparent;
+  color: var(--btd-color-secondary);
+  border: 1px solid var(--btd-color-secondary);
+
+  border: none;
+  cursor: pointer;
 }
