@@ -1,6 +1,11 @@
+"use client";
+
 import s from "./side-nav.module.css";
 import Link from "next/link";
 import { UserCircle } from "lucide-react";
+import { Dialog } from "radix-ui";
+import { Contact } from "../Contact/Contact";
+import { useState } from "react";
 
 type SideNavProps = {
   items?: SideNavItemProps[];
@@ -12,6 +17,17 @@ type SideNavItemProps = {
 };
 
 export const SideNav = ({ items }: SideNavProps) => {
+  const [open, setOpen] = useState(false);
+  const [toastOpen, setToastOpen] = useState(false);
+  const [toastMessage, setToastMessage] = useState("");
+
+  const isContact = (title: string) => {
+    return title === "Contact";
+  };
+
+  const handleContactClose = () => {
+    setOpen(false);
+  };
   return (
     <div className={`side-nav ${s["side-nav"]}`}>
       <div className={s["side-nav-header"]}>
@@ -22,9 +38,24 @@ export const SideNav = ({ items }: SideNavProps) => {
         </div>
         <h2 className={s["side-nav-title"]}>BreeTheDev</h2>
       </div>
-      {items?.map((item, index) => (
-        <SideNavItem key={index} title={item.title} path={item.path} />
-      ))}
+      {items?.map((item, index) =>
+        isContact(item.title) ? (
+          <Dialog.Root key={index} open={open} onOpenChange={setOpen}>
+            <Dialog.Trigger className={s["side-nav-contact"]}>
+              <div className={s["side-nav-link"]}>{item.title}</div>
+            </Dialog.Trigger>
+            <Contact
+              onClose={handleContactClose}
+              toastMessage={toastMessage}
+              setToastMessage={setToastMessage}
+              toastOpen={toastOpen}
+              setToastOpen={setToastOpen}
+            />
+          </Dialog.Root>
+        ) : (
+          <SideNavItem key={index} title={item.title} path={item.path} />
+        )
+      )}
     </div>
   );
 };

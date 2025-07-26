@@ -16,6 +16,18 @@
   border-right: 1px solid var(--btd-color-border);
 }
 
+.side-nav-contact {
+  background-color: transparent;
+  border: 1px solid var(--btd-color-border);
+  width: calc(100% - var(--btd-space-5));
+  padding: var(--btd-space-2) var(--btd-space-2);
+  border-radius: 4px;
+  font-family: var(--btg-font-family-main);
+  text-transform: uppercase;
+  font-size: var(--btd-space-4);
+  cursor: pointer;
+}
+
 .side-nav-item {
   display: flex;
   text-transform: uppercase;
@@ -27,11 +39,12 @@
   border: 1px solid var(--btd-color-border);
   border-radius: 4px;
   transition: background-color 0.2s ease;
+  cursor: pointer;
 }
 
-.side-nav-item:hover {
+.side-nav-item:hover,
+.side-nav-contact:hover {
   opacity: 0.8;
-  cursor: pointer;
 }
 
 .side-nav-link {
