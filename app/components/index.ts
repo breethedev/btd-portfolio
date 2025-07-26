@@ -1,5 +1,6 @@
 // PLOP_INJECT_EXPORTS
 
+export { Contact } from './Contact/Contact';
 export { Carousel } from "./Carousel/Carousel";
 export { Table, type TableItemProps, type TableProps } from "./Table/Table";
 export { Banner } from "./Banner/Banner";

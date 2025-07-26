@@ -1,6 +1,7 @@
 import { Cascadia_Code, Anton_SC } from "next/font/google";
 import { SideNav, Banner } from "@/app/components";
 import { SECTIONS } from "@/app/constants";
+import { Toast } from "radix-ui";
 
 import "./globals.css";
 
@@ -29,11 +30,13 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body className={`${cascadiaCode.variable} ${antonSC.variable}`}>
-        <div className="layout">
-          <SideNav items={sectionLinks} />
-          <Banner />
-          <div className="main">{children}</div>
-        </div>
+        <Toast.Provider swipeDirection="right">
+          <div className="layout">
+            <SideNav items={sectionLinks} />
+            <Banner />
+            <div className="main">{children}</div>
+          </div>
+        </Toast.Provider>
       </body>
     </html>
   );
