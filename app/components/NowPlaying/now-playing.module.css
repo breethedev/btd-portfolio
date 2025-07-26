@@ -1,0 +1,13 @@
+.now-playing {
+  /* Add your component styles here */
+  display: flex;
+  position: fixed;
+  bottom: 0;
+  flex-direction: row;
+  align-items: center;
+  justify-content: start;
+  background-color: var(--btd-color-primary);
+  padding: 20px;
+  width: 100%;
+  border-top: 1px solid var(--btd-color-secondary);
+}

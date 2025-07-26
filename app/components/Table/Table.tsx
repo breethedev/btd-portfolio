@@ -28,7 +28,7 @@ export const Table = ({ items }: TableProps) => {
   );
 };
 
-const Item = ({ name, description, image, icons }: TableItemProps) => {
+export const Item = ({ name, description, image, icons }: TableItemProps) => {
   return (
     <div className={s["item"]}>
       <div className={s["item-content"]}>

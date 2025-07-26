@@ -24,7 +24,7 @@ export const Banner = ({ image }: BannerProps) => {
   };
 
   return (
-    <div className={`${s["banner"]} banner`}>
+    <div className={`${s["banner"]} `}>
       <div className={s["banner-content"]}>
         <h1 className={s["banner-title"]}>{getBannerMessage(route) || SUMMARY.title}</h1>
         {image && <Image src={image} alt="Banner Image" className={s["banner-image"]} />}

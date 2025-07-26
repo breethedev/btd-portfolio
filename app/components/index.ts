@@ -1,5 +1,6 @@
 // PLOP_INJECT_EXPORTS
 
+export { NowPlaying } from './NowPlaying/NowPlaying';
 export { Contact } from './Contact/Contact';
 export { Carousel } from "./Carousel/Carousel";
 export { Table, type TableItemProps, type TableProps } from "./Table/Table";
