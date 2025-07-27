@@ -1,1 +1,1 @@
-export { MusicPlayerProvider, useMusicPlayer } from "./MusicPlayer";
+export { MusicPlayerProvider, useMusicPlayer, type Track } from "./MusicPlayer";

@@ -1,0 +1,46 @@
+.lyric-drawer {
+  /* Add your component styles here */
+  display: flex;
+  position: fixed;
+  flex-direction: row;
+  z-index: 10;
+  min-height: 100vh;
+  width: 100%;
+  background-color: var(--btd-color-primary);
+  transition: bottom 1s ease-in-out;
+}
+
+.lyric-drawer-backdrop {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: -1;
+}
+
+.lyric-drawer-text-container {
+  /* Style for the text container */
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: start;
+  width: 100%;
+  padding: var(--btd-space-4);
+}
+
+.lyric-drawer-text {
+  /* Style for the lyrics text */
+  font-size: 32px;
+  line-height: 1.5;
+  opacity: 0.8;
+  max-width: 70%;
+  overflow-y: auto;
+  max-height: calc(100vh - var(--btd-space-8));
+}
+
+.lyric-drawer-text span {
+  /* Style for highlighted text */
+  color: var(--btd-color-secondary);
+  font-weight: bold;
+}

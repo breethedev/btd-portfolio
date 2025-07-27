@@ -2,6 +2,9 @@
   /* Add your component styles here */
   padding: 20px;
   min-width: 202px;
+  display: flex;
+  flex-direction: column;
+  height: max-content;
 }
 
 .card-image-container,

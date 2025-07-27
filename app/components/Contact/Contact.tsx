@@ -1,10 +1,11 @@
 "use client";
 
 import s from "./contact.module.css";
-import { Dialog, Form, Toast } from "radix-ui";
+import { Dialog, Form } from "radix-ui";
 import { X as CloseIcon } from "lucide-react";
 import { useState } from "react";
 import emailjs from "@emailjs/browser";
+import { Toast } from "../Toast/Toast";
 
 type ContactProps = {
   onClose?: () => void;
@@ -167,18 +168,12 @@ export const Contact = ({
           </Dialog.Content>
         </Dialog.Overlay>
       </Dialog.Portal>
-      <Toast.Root
-        className={s["contact-toast-container"]}
-        open={toastOpen}
-        onOpenChange={setToastOpen}
-        duration={5000}
-      >
-        <Toast.Title className={s["contact-toast-title"]}>Message Status</Toast.Title>
-        <Toast.Description asChild>
-          <p className={s["contact-toast-description"]}>{toastMessage}</p>
-        </Toast.Description>
-      </Toast.Root>
-      <Toast.Viewport className={s["contact-toast-viewport"]} />
+      <Toast
+        toastOpen={toastOpen}
+        setToastOpen={setToastOpen}
+        toastMessage={toastMessage}
+        toastTitle="Message Status"
+      />
     </>
   );
 };
