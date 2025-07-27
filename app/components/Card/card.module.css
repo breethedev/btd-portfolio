@@ -18,8 +18,10 @@
   border-radius: var(--btd-radius-sm);
 }
 
-.card-title {
-  margin: var(--btd-space-2) 0;
+.card-title,
+.card-meta,
+.card-description {
+  margin: var(--btd-space-1) 0;
 }
 
 .card-body {

@@ -1,4 +1,4 @@
-import { TableItemProps, CardProps } from "./components";
+import { ItemProps, CardProps } from "./components";
 import { Ellipsis, Heart } from "lucide-react";
 
 export const SUMMARY = {
@@ -27,15 +27,10 @@ export const SECTIONS = {
       "Over 5 years of experience in full-stack development, specializing in React and Node.js.",
     path: "/experience",
   },
-  MERCH: {
-    title: "Merch",
-    description: "Check out my merchandise and support my work.",
-    path: "/merch",
-  },
-  BLOG: {
-    title: "Blog",
-    description: "Read my latest articles on software development and technology.",
-    path: "/blog",
+  GALLERY: {
+    title: "Gallery",
+    description: "A collection of my photography and design work.",
+    path: "/gallery",
   },
   CONTACT: {
     title: "Contact",
@@ -52,7 +47,7 @@ export const SectionNames = {
   INTERESTS: "Interests",
 };
 
-export const TOP_FIVE_MEMOS: TableItemProps[] = [
+export const TOP_FIVE_MEMOS: ItemProps[] = [
   {
     id: "1",
     name: "Who Am I?",
