@@ -3,7 +3,6 @@
 import s from "./carousel.module.css";
 import { Card, CardProps } from "../Card/Card";
 import { CircleArrowLeft, CircleArrowRight } from "lucide-react";
-import { get } from "http";
 
 type CarouselProps = {
   header?: string;
@@ -67,14 +66,14 @@ export const Carousel = ({ header, cards, action, onActionClick, cardSize }: Car
       {header && (
         <div className={s["carousel-header-container"]}>
           {header && <h2 className={s["carousel-header"]}>{header}</h2>}
-          {action && (
-            <button className={s["carousel-action"]} onClick={onActionClick}>
-              {action}
-            </button>
-          )}
           <div className={s["carousel-arrows"]}>
             <ArrowButton direction="left" onClick={handleLeftArrowClick} />
             <ArrowButton direction="right" onClick={handleRightArrowClick} />
+            {action && (
+              <button className={s["carousel-action"]} onClick={onActionClick}>
+                {action}
+              </button>
+            )}
           </div>
         </div>
       )}

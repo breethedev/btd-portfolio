@@ -1,12 +1,13 @@
 "use client";
 
 import s from "./page.module.css";
-import { Card, Table, Carousel } from "./components";
+import { Card, Table, Carousel, Banner } from "./components";
 import { SUMMARY, TOP_FIVE_MEMOS, PROJECTS, EXPERIENCE } from "./constants";
 
 export default function Home() {
   return (
     <main className={s.page}>
+      <Banner />
       <div className={s["featured-row"]}>
         <div>
           <Card

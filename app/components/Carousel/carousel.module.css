@@ -1,5 +1,4 @@
 .carousel {
-  /* Add your component styles here */
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -24,6 +23,7 @@
   color: var(--btd-color-secondary);
   border: 1px solid var(--btd-color-secondary);
   padding: 5px 10px;
+  margin-left: var(--btd-space-3);
   border-radius: var(--btd-radius-sm);
   font-size: var(--btd-space-3);
   text-transform: uppercase;
