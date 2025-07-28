@@ -1,0 +1,44 @@
+{
+  "cards": [
+    {
+      "name": "card-1",
+      "image": "/memory-game/mem-1.jpg",
+      "id": "card-1"
+    },
+    {
+      "name": "card-2",
+      "image": "/memory-game/mem-2.jpg",
+      "id": "card-2"
+    },
+    {
+      "name": "card-3",
+      "image": "/memory-game/mem-3.jpg",
+      "id": "card-3"
+    },
+    {
+      "name": "card-4",
+      "image": "/memory-game/mem-4.jpg",
+      "id": "card-4"
+    },
+    {
+      "name": "card-5",
+      "image": "/memory-game/mem-5.jpg",
+      "id": "card-5"
+    },
+    {
+      "name": "card-6",
+      "image": "/memory-game/mem-6.jpg",
+      "id": "card-6"
+    },
+    {
+      "name": "card-7",
+      "image": "/memory-game/mem-7.jpg",
+      "id": "card-7"
+    },
+    {
+      "name": "card-8",
+      "image": "/memory-game/mem-8.jpg",
+      "id": "card-8"
+    }
+  ]
+}

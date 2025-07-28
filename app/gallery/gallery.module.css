@@ -1,15 +1,16 @@
-.memory-cards-container {
+.cards-container {
   display: grid;
   justify-content: center;
-  grid-template-columns: repeat(4, 250px);
-  grid-template-rows: repeat(4, calc(250px / (2 * 3))); /* Aspect ratio of 2:3 */
+  grid-template-columns: repeat(4, 100px);
+  grid-template-rows: repeat(5, calc(100px / 2 * 3)); /* Aspect ratio of 2:3 */
   gap: 20px;
   justify-content: center;
+  height: 100%;
 }
 
-.memory-card {
-  width: 250px;
-  height: calc(250px / (2 * 3));
+.card {
+  width: 100px;
+  height: calc(100px / 2 * 3);
   /* Aspect ratio of 2:3 */
   position: relative;
   transform-style: preserve-3d;
@@ -24,7 +25,7 @@
   height: 100%;
 }
 
-.memory-card.flipped {
+.card.flipped {
   transform: rotateY(180deg);
 }
 
@@ -38,7 +39,17 @@
   backface-visibility: hidden;
 }
 
-.memory-card .back {
+.front {
+  transform: rotateY(180deg);
+  z-index: 2;
+}
+
+.back {
+  transform: rotateY(0deg);
+  z-index: 1;
+}
+
+.card .back {
   background-position: center center;
   background-size: cover;
   background-repeat: no-repeat;
