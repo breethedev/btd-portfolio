@@ -83,8 +83,12 @@ const SideNavItem = ({ title, path, isSubSection }: SideNavItemProps) => {
       if (isHomePage) {
         scrollToSection(title.toLowerCase());
       } else {
-        router.push(path || "#");
-        scrollToSection(title.toLowerCase());
+        router.push("/", {
+          scroll: false,
+        });
+        setTimeout(() => {
+          scrollToSection(title.toLowerCase());
+        }, 100); // Delay to ensure the page has loaded
       }
     }
   };

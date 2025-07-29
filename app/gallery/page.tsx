@@ -3,7 +3,8 @@
 import React, { useEffect, useState } from "react";
 import Image from "next/image";
 import { SECTIONS } from "@/app/constants";
-import { Dialog, VisuallyHidden } from "radix-ui";
+import { Dialog, VisuallyHidden, ToggleGroup } from "radix-ui";
+import { X as CloseIcon, Gamepad2, Image as ImageIcon } from "lucide-react";
 import s from "./gallery.module.css";
 import cardsData from "@/app/data/cards.json"; // Assuming cards.json is in the same directory
 
@@ -70,10 +71,12 @@ function MemoryGame() {
 
   return (
     <div className={s["memory-game"]}>
-      <div className={s.score}>Score: {score}</div>
-      <button className={s.restart} onClick={restartGame}>
-        Restart Game
-      </button>
+      <div className={s["game-header"]}>
+        <div className={s.score}>Score: {score}</div>
+        <button className={s.restart} onClick={restartGame}>
+          Restart Game
+        </button>
+      </div>
       <div className={s["cards-container"]}>
         {cards.map((card, idx) => {
           const isFlipped = flipped.includes(idx) || matched.includes(idx);
@@ -147,7 +150,9 @@ function PhotoBox({ image, open, onClose }: { image: string; open: boolean; onCl
             <Dialog.Description>Click to close the photo viewer</Dialog.Description>
           </VisuallyHidden.Root>
           <div className={s["photo-container"]}>
-            <Dialog.Close className={s["photo-close"]}>X</Dialog.Close>
+            <Dialog.Close className={s["photo-close"]}>
+              <CloseIcon size={24} />
+            </Dialog.Close>
             <Image src={image} alt="Photo" width={400} height={(400 / 2) * 3} />
           </div>
         </Dialog.Content>
@@ -158,14 +163,34 @@ function PhotoBox({ image, open, onClose }: { image: string; open: boolean; onCl
 
 export default function Gallery() {
   const [showWall, setShowWall] = useState(false);
-  const toggleWall = () => setShowWall((prev) => !prev);
+
+  const DESCRIPTIONS = {
+    GALLERY: "Before I was an engineer, I was a photographer. Here are some of my favorite shots.",
+    MEMORY_GAME: "One of my favorite games to play with my daughter. Enjoy!",
+  };
 
   return (
     <div className={s.page}>
-      <h1 className={s["gallery-title"]}>{SECTIONS.GALLERY.title.toUpperCase()}</h1>
-      <button className={s.toggle} onClick={toggleWall}>
-        {showWall ? "Show Memory Game" : "Show Gallery Wall"}
-      </button>
+      <div>
+        <div className={s["gallery-header"]}>
+          <h1 className={s["gallery-title"]}>{SECTIONS.GALLERY.title.toUpperCase()}</h1>
+          <ToggleGroup.Root
+            className={s["gallery-toggle"]}
+            type="single"
+            value={showWall ? "wall" : "game"}
+          >
+            <ToggleGroup.Item value="wall" className={s.toggle} onClick={() => setShowWall(true)}>
+              <ImageIcon size={24} />
+            </ToggleGroup.Item>
+            <ToggleGroup.Item value="game" className={s.toggle} onClick={() => setShowWall(false)}>
+              <Gamepad2 size={24} />
+            </ToggleGroup.Item>
+          </ToggleGroup.Root>
+        </div>
+        <p className={s.description}>
+          {showWall ? DESCRIPTIONS.GALLERY : DESCRIPTIONS.MEMORY_GAME}
+        </p>
+      </div>
       {showWall ? <GalleryWall /> : <MemoryGame />}
     </div>
   );

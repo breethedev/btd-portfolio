@@ -1,5 +1,6 @@
 .page {
   padding: var(--btd-space-4);
+  justify-content: space-between;
 }
 
 .page,
@@ -7,9 +8,83 @@
   display: flex;
   flex-direction: column;
   align-items: center;
-  justify-content: center;
   width: 100%;
   height: 100%;
+}
+
+.description {
+  font-size: var(--btd-font-size-md);
+  color: var(--btd-color-secondary);
+  margin: var(--btd-space-4) 0;
+  text-align: center;
+}
+
+.memory-game,
+.gallery-wall {
+  animation: fadeIn 600ms ease-in-out;
+}
+
+.gallery-header,
+.game-header {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  max-width: 800px;
+  margin-bottom: var(--btd-space-4);
+}
+
+.gallery-toggle {
+  border: 1px solid var(--btd-color-border);
+  border-radius: var(--btd-radius-sm);
+}
+
+.toggle {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 100px;
+  height: 40px;
+  background-color: var(--btd-color-secondary);
+  border: none;
+  color: var(--btd-color-text-secondary);
+  border-radius: var(--btd-radius-sm);
+
+  cursor: pointer;
+  font-family: var(--btd-font-main);
+  font-size: var(--btd-font-size-md);
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.toggle[data-state="on"] {
+  color: var(--btd-color-primary);
+  background-color: var(--btd-color-text-primary);
+}
+
+.toggle[data-state="off"] {
+  color: var(--btd-color-secondary);
+  background-color: var(--btd-color-text-secondary);
+}
+
+.restart {
+  background-color: var(--btd-color-primary);
+  color: var(--btd-color-text-primary);
+  border: 1px solid var(--btd-color-border);
+  font-family: var(--btd-font-main);
+  border-radius: var(--btd-radius-sm);
+  padding: var(--btd-space-1) var(--btd-space-3);
+  cursor: pointer;
+  font-size: var(--btd-font-size-md);
+  transition: background-color 0.3s ease;
+  margin-bottom: var(--btd-space-2);
+}
+
+.score {
+  font-size: var(--btd-font-size-lg);
+  font-weight: var(--btd-font-weight-semibold);
+  color: var(--btd-color-text-primary);
+  margin-bottom: var(--btd-space-4);
 }
 
 .gallery-title {
@@ -201,7 +276,8 @@
   position: absolute;
   top: 10px;
   right: 10px;
-  color: var(--btd-color-primary);
+  color: var(--btd-color-secondary);
+  background-color: var(--btd-color-primary);
   border: none;
   border-radius: 50%;
   width: 30px;
@@ -228,6 +304,15 @@
   animation: contentShow 150ms cubic-bezier(0.16, 1, 0.3, 1);
 }
 
-.contact-content:focus {
+.photo-content:focus {
   outline: none;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
 }
