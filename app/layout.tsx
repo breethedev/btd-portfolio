@@ -38,7 +38,7 @@ export default function RootLayout({
               <SideNav items={sectionLinks} />
 
               <div className="main">{children}</div>
-              <NowPlaying />
+              {/* <NowPlaying /> */}
             </div>
           </Toast.Provider>
         </MusicPlayerProvider>

@@ -14,7 +14,7 @@ export const SECTIONS = {
   ABOUT: {
     title: "About Me",
     description: "A passionate software engineer with a love for creating innovative solutions.",
-    path: "/about",
+    path: "/",
   },
   PROJECTS: {
     title: "Projects",

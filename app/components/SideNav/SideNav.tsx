@@ -6,6 +6,7 @@ import { UserCircle } from "lucide-react";
 import { Dialog } from "radix-ui";
 import { Contact } from "../Contact/Contact";
 import { useState } from "react";
+import { usePathname, useRouter } from "next/navigation";
 
 type SideNavProps = {
   items?: SideNavItemProps[];
@@ -14,6 +15,7 @@ type SideNavProps = {
 type SideNavItemProps = {
   title: string;
   path?: string;
+  isSubSection?: boolean;
 };
 
 export const SideNav = ({ items }: SideNavProps) => {
@@ -53,19 +55,56 @@ export const SideNav = ({ items }: SideNavProps) => {
             />
           </Dialog.Root>
         ) : (
-          <SideNavItem key={index} title={item.title} path={item.path} />
+          <SideNavItem
+            key={index}
+            title={item.title}
+            path={item.path}
+            isSubSection={item.title === "Projects" || item.title === "Experience"}
+          />
         )
       )}
     </div>
   );
 };
 
-const SideNavItem = ({ title, path }: SideNavItemProps) => {
+const SideNavItem = ({ title, path, isSubSection }: SideNavItemProps) => {
+  const pathname = usePathname();
+  const router = useRouter();
+  const scrollToSection = (section: string) => {
+    const element = document.getElementById(section);
+    if (element) {
+      element.scrollIntoView({ behavior: "smooth" });
+    }
+  };
+
+  const isHomePage = pathname === "/";
+  const handleSubSectionClick = () => {
+    if (isSubSection) {
+      if (isHomePage) {
+        scrollToSection(title.toLowerCase());
+      } else {
+        router.push(path || "#");
+        scrollToSection(title.toLowerCase());
+      }
+    }
+  };
+  const handleClick = () => {
+    if (isSubSection) {
+      handleSubSectionClick();
+    } else {
+      return;
+    }
+  };
+
   return (
-    <div className={s["side-nav-item"]}>
-      <Link href={path || "#"} className={s["side-nav-link"]}>
-        {title}
-      </Link>
+    <div className={s["side-nav-item"]} onClick={handleClick}>
+      {!isSubSection ? (
+        <Link href={path || "#"} className={s["side-nav-link"]}>
+          {title}
+        </Link>
+      ) : (
+        title
+      )}
       {/* Add more content or styles as needed */}
     </div>
   );

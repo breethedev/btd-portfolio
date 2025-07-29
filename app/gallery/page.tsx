@@ -2,6 +2,8 @@
 
 import React, { useEffect, useState } from "react";
 import Image from "next/image";
+import { SECTIONS } from "@/app/constants";
+import { Dialog, VisuallyHidden } from "radix-ui";
 import s from "./gallery.module.css";
 import cardsData from "@/app/data/cards.json"; // Assuming cards.json is in the same directory
 
@@ -42,6 +44,18 @@ function MemoryGame() {
     setScore((s) => s + 1);
   }
 
+  function restartGame() {
+    setFlipped([]);
+    setMatched([]);
+    setScore(0);
+    const cards = cardsData.cards;
+    const initialCards = cards.flatMap((card) => [
+      { ...card, id: Math.random() }, // Assign a unique id to each card instance
+      { ...card, id: Math.random() },
+    ]);
+    setCards(shuffle(initialCards));
+  }
+
   useEffect(() => {
     if (flipped.length === 2) {
       const [first, second] = flipped;
@@ -55,8 +69,11 @@ function MemoryGame() {
   }, [flipped, cards]);
 
   return (
-    <div>
+    <div className={s["memory-game"]}>
       <div className={s.score}>Score: {score}</div>
+      <button className={s.restart} onClick={restartGame}>
+        Restart Game
+      </button>
       <div className={s["cards-container"]}>
         {cards.map((card, idx) => {
           const isFlipped = flipped.includes(idx) || matched.includes(idx);
@@ -82,11 +99,74 @@ function MemoryGame() {
   );
 }
 
-export default function Gallery() {
+function GalleryWall() {
+  const [selectedImage, setSelectedImage] = useState<string | null>(null);
+  const handleImageClick = (image: string) => {
+    setSelectedImage(image);
+  };
+  const handleClosePhotoBox = () => {
+    setSelectedImage(null);
+  };
+
   return (
-    <main className={s.page}>
-      <h1>Gallery</h1>
-      <MemoryGame />
-    </main>
+    <div className={s["gallery-wall"]}>
+      {cardsData.cards.map((card) => (
+        <>
+          <div
+            key={card.id}
+            className={s["gallery-card"]}
+            onClick={() => handleImageClick(card.image)}
+          >
+            <Image
+              src={card.image}
+              alt={card.name}
+              fill
+              quality={100}
+              style={{ objectFit: "cover" }}
+            />
+          </div>
+          <PhotoBox
+            image={card.image}
+            open={card.image === selectedImage}
+            onClose={handleClosePhotoBox}
+          />
+        </>
+      ))}
+    </div>
+  );
+}
+
+function PhotoBox({ image, open, onClose }: { image: string; open: boolean; onClose: () => void }) {
+  return (
+    <Dialog.Root open={open} onOpenChange={onClose}>
+      <Dialog.Portal>
+        <Dialog.Overlay className={s["photo-overlay"]} />
+        <Dialog.Content className={s["photo-content"]}>
+          <VisuallyHidden.Root>
+            <Dialog.Title>Photo Viewer</Dialog.Title>
+            <Dialog.Description>Click to close the photo viewer</Dialog.Description>
+          </VisuallyHidden.Root>
+          <div className={s["photo-container"]}>
+            <Dialog.Close className={s["photo-close"]}>X</Dialog.Close>
+            <Image src={image} alt="Photo" width={400} height={(400 / 2) * 3} />
+          </div>
+        </Dialog.Content>
+      </Dialog.Portal>
+    </Dialog.Root>
+  );
+}
+
+export default function Gallery() {
+  const [showWall, setShowWall] = useState(false);
+  const toggleWall = () => setShowWall((prev) => !prev);
+
+  return (
+    <div className={s.page}>
+      <h1 className={s["gallery-title"]}>{SECTIONS.GALLERY.title.toUpperCase()}</h1>
+      <button className={s.toggle} onClick={toggleWall}>
+        {showWall ? "Show Memory Game" : "Show Gallery Wall"}
+      </button>
+      {showWall ? <GalleryWall /> : <MemoryGame />}
+    </div>
   );
 }
