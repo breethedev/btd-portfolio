@@ -8,13 +8,16 @@ export type ItemProps = {
   image?: string;
   icons?: IconType[];
   id?: string | number;
+  className?: string;
 };
 
 export type IconType = typeof User;
 
-export const Item = ({ name, description, image, icons }: ItemProps) => {
+export const Item = ({ name, description, image, icons, className }: ItemProps) => {
+  const itemClass = className ? `${s["item"]} ${className}` : s["item"];
+
   return (
-    <div className={s["item"]}>
+    <div className={itemCla}>
       <div className={s["item-content"]}>
         <div className={s["item-image"]}>
           {image ? <Image src={image} alt={name} /> : <div className={s.placeholder} />}
