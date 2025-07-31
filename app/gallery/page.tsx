@@ -72,7 +72,6 @@ function MemoryGame() {
   return (
     <div className={s["memory-game"]}>
       <div className={s["game-header"]}>
-        <div className={s.score}>Score: {score}</div>
         <button className={s.restart} onClick={restartGame}>
           Restart Game
         </button>

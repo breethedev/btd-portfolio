@@ -42,3 +42,20 @@
   gap: var(--btd-space-2);
   color: var(--btd-color-secondary);
 }
+
+@media screen and (max-width: 600px) {
+  .item {
+    width: 100%;
+  }
+
+  .item-description {
+    font-size: 12px;
+    text-overflow: ellipsis;
+    overflow: hidden;
+    white-space: nowrap;
+  }
+
+  .item-details {
+    max-width: 150px;
+  }
+}

@@ -65,3 +65,9 @@
 .side-nav-title {
   font-size: var(--btd-space-4);
 }
+
+@media screen and (max-width: 768px) {
+  .side-nav {
+    display: none;
+  }
+}

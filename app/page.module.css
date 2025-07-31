@@ -10,3 +10,17 @@
   padding: var(--btd-space-2) var(--btd-space-5);
   margin-bottom: var(--btd-space-10);
 }
+
+@media (max-width: 1145px) {
+  .featured-row {
+    flex-direction: column;
+    align-items: center;
+  }
+}
+
+@media screen and (max-width: 600px) {
+  .featured-row {
+    padding: var(--btd-space-2) var(--btd-space-3);
+    width: calc(100vw - 20px);
+  }
+}

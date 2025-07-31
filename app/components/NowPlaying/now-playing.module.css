@@ -167,3 +167,15 @@
   align-items: center;
   gap: var(--btd-space-1);
 }
+
+@media screen and (max-width: 600px) {
+  .now-playing {
+    bottom: calc(var(--btd-space-10) + var(--btd-space-4));
+    max-width: calc(100% - 16px);
+    padding: var(--btd-space-2);
+  }
+
+  .track-controls-container {
+    display: none;
+  }
+}

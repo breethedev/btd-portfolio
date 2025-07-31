@@ -16,6 +16,7 @@ import {
 } from "lucide-react";
 import { useMusicPlayer } from "@/app/contexts";
 import { convertMillisecondsToTime } from "@/app/helpers";
+import { BottomNav } from "../BottomNav/BottomNav";
 import { useState } from "react";
 import { Toast } from "@/app/components/Toast/Toast";
 // import { LyricDrawer } from "@/app/components";
@@ -157,6 +158,7 @@ export const NowPlaying = () => {
         />
       </div>
       {/* <LyricDrawer open={lyricDrawerOpen} /> */}
+      <BottomNav />
     </>
   );
 };

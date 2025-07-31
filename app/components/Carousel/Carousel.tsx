@@ -62,7 +62,7 @@ export const Carousel = ({ header, cards, action, onActionClick, cardSize }: Car
   };
 
   return (
-    <div className={s["carousel"]}>
+    <div className={s["carousel-container"]}>
       {header && (
         <div className={s["carousel-header-container"]}>
           {header && <h2 className={s["carousel-header"]}>{header}</h2>}
@@ -77,27 +77,29 @@ export const Carousel = ({ header, cards, action, onActionClick, cardSize }: Car
           </div>
         </div>
       )}
-      {cards.length === 0 && <p className={s["carousel-empty"]}>No cards available</p>}
-      {cards.length > 0 && (
-        <div
-          className={s["carousel-items"]}
-          id={header ? header.toLowerCase().replace(/\s+/g, "-") : "carousel-items"}
-        >
-          {cards.map((card, index) => (
-            <Card
-              key={index}
-              image={card.image}
-              title={card.title}
-              description={card.description}
-              link={card.link}
-              onClick={card.onClick}
-              className={s["carousel-card"]}
-              meta={card.meta}
-              size={cardSize}
-            />
-          ))}
-        </div>
-      )}
+      <div className={s["carousel"]}>
+        {cards.length === 0 && <p className={s["carousel-empty"]}>No cards available</p>}
+        {cards.length > 0 && (
+          <div
+            className={s["carousel-items"]}
+            id={header ? header.toLowerCase().replace(/\s+/g, "-") : "carousel-items"}
+          >
+            {cards.map((card, index) => (
+              <Card
+                key={index}
+                image={card.image}
+                title={card.title}
+                description={card.description}
+                link={card.link}
+                onClick={card.onClick}
+                className={s["carousel-card"]}
+                meta={card.meta}
+                size={cardSize}
+              />
+            ))}
+          </div>
+        )}
+      </div>
     </div>
   );
 };

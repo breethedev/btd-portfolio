@@ -10,7 +10,7 @@ export const Table = ({ items }: TableProps) => {
     <div className={s["table"]}>
       <div className={s["table-body"]}>
         {items.map((item) => (
-          <Item key={item.id} {...item} />
+          <Item key={item.id} {...item} className={s["table-item"]} />
         ))}
       </div>
     </div>

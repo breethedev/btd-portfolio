@@ -13,6 +13,7 @@ export type CardProps = {
   className?: string;
   size?: string[];
   meta?: string;
+  horizontal?: boolean;
 };
 
 export const Card = ({
@@ -24,6 +25,7 @@ export const Card = ({
   meta,
   className,
   size,
+  horizontal,
 }: CardProps) => {
   // const cardSizeClass = size ? s[`card-${size}`] : s["card-medium"];
   const cardClasses = `${s["card"]}  ${className || ""}`;

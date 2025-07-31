@@ -1,5 +1,6 @@
 // PLOP_INJECT_EXPORTS
 
+export { BottomNav } from './BottomNav/BottomNav';
 export { Toast } from './Toast/Toast';
 export { LyricDrawer } from './LyricDrawer/LyricDrawer';
 export { Item, type ItemProps } from "./Item/Item";
